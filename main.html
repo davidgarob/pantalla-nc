@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla Mortal Kombat</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    .big-display {
+      margin-top: 20px;
+      height: 300px;
+    }
+    .big-display img {
+      height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px auto;
+      gap: 10px;
+    }
+    .thumbnails img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 3px solid gray;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .thumbnails img:hover {
+      transform: scale(1.1);
+      border-color: gold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selecciona tu luchador</h1>
+  <div class="big-display" id="bigDisplay">
+    <img src="personajes/biden_grande.png" alt="Personaje grande" id="bigImage">
+  </div>
+  <div class="thumbnails">
+    <img src="personajes/biden_thumb.png" alt="Biden" onclick="changeImage('biden_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <!-- Agrega más miniaturas aquí -->
+  </div>
+
+  <script>
+    function changeImage(fileName) {
+      document.getElementById('bigImage').src = 'personajes/' + fileName;
+    }
+  </script>
+</body>
+</html>
