@@ -28,6 +28,14 @@
       max-width: 100%;
       object-fit: contain;
     }
+    #stats {
+      margin-top: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-align: left;
+    }
     .thumbnails {
       display: flex;
       flex-wrap: wrap;
@@ -55,28 +63,47 @@
   <div class="big-display" id="bigDisplay">
     <img src="personajes/biden_grande.png" alt="Personaje grande" id="bigImage">
   </div>
+  <div id="stats">
+    <p><strong>Fuerza:</strong> 2/10</p>
+    <p><strong>Velocidad de reacción:</strong> -3/10</p>
+    <p><strong>Probabilidad de palmarla:</strong> 94%</p>
+    <p><strong>Frase:</strong> “¿Dónde estoy?”</p>
+  </div>
   <div class="thumbnails">
-  <!-- Primera fila -->
-  <img src="personajes/biden_thumb.png" alt="Biden" onclick="changeImage('biden_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-
-  <!-- SALTO DE LÍNEA -->
-  <div style="flex-basis: 100%; height: 0;"></div>
-
-  <!-- Segunda fila -->
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-  <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
-</div>
+    <img src="personajes/biden_thumb.png" alt="Biden" onclick="changeImage('biden_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <div style="flex-basis: 100%; height: 0;"></div>
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
+    <!-- Agrega más miniaturas aquí -->
+  </div>
 
   <script>
     function changeImage(fileName) {
       document.getElementById('bigImage').src = 'personajes/' + fileName;
+      let stats = document.getElementById('stats');
+
+      if (fileName === 'biden_grande.png') {
+        stats.innerHTML = `
+          <p><strong>Fuerza:</strong> 2/10</p>
+          <p><strong>Velocidad de reacción:</strong> -3/10</p>
+          <p><strong>Probabilidad de palmarla:</strong> 94%</p>
+          <p><strong>Frase:</strong> “¿Dónde estoy?”</p>
+        `;
+      } else if (fileName === 'canita_grande.png') {
+        stats.innerHTML = `
+          <p><strong>Fuerza:</strong> 10/10</p>
+          <p><strong>Potencia vocal:</strong> 11/10</p>
+          <p><strong>Probabilidad de palmarla:</strong> Inmortal</p>
+          <p><strong>Frase:</strong> “¡Cañita pa' rato!”</p>
+        `;
+      }
     }
   </script>
 </body>
