@@ -19,8 +19,15 @@
     h1 {
       margin-top: 20px;
     }
-    .big-display {
+    .display-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
       margin-top: 20px;
+    }
+    .big-display {
       height: 300px;
     }
     .big-display img {
@@ -28,13 +35,15 @@
       max-width: 100%;
       object-fit: contain;
     }
-    #stats {
-      margin-top: 10px;
+    #stats, #phrase {
       background-color: rgba(0, 0, 0, 0.6);
-      display: inline-block;
       padding: 10px 20px;
       border-radius: 10px;
       text-align: left;
+      max-width: 250px;
+    }
+    #phrase {
+      text-align: center;
     }
     .thumbnails {
       display: flex;
@@ -60,15 +69,21 @@
 </head>
 <body>
   <h1>NECROPORRA DE DAVID 2026</h1>
-  <div class="big-display" id="bigDisplay">
-    <img src="personajes/biden_grande.png" alt="Personaje grande" id="bigImage">
+
+  <div class="display-container">
+    <div id="stats">
+      <p><strong>Fuerza:</strong> 2/10</p>
+      <p><strong>Velocidad de reacción:</strong> -3/10</p>
+      <p><strong>Probabilidad de palmarla:</strong> 94%</p>
+    </div>
+    <div class="big-display" id="bigDisplay">
+      <img src="personajes/biden_grande.png" alt="Personaje grande" id="bigImage">
+    </div>
+    <div id="phrase">
+      <p><strong>Frase:</strong> “¿Dónde estoy?”</p>
+    </div>
   </div>
-  <div id="stats">
-    <p><strong>Fuerza:</strong> 2/10</p>
-    <p><strong>Velocidad de reacción:</strong> -3/10</p>
-    <p><strong>Probabilidad de palmarla:</strong> 94%</p>
-    <p><strong>Frase:</strong> “¿Dónde estoy?”</p>
-  </div>
+
   <div class="thumbnails">
     <img src="personajes/biden_thumb.png" alt="Biden" onclick="changeImage('biden_grande.png')">
     <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png')">
@@ -88,12 +103,15 @@
     function changeImage(fileName) {
       document.getElementById('bigImage').src = 'personajes/' + fileName;
       let stats = document.getElementById('stats');
+      let phrase = document.getElementById('phrase');
 
       if (fileName === 'biden_grande.png') {
         stats.innerHTML = `
           <p><strong>Fuerza:</strong> 2/10</p>
           <p><strong>Velocidad de reacción:</strong> -3/10</p>
           <p><strong>Probabilidad de palmarla:</strong> 94%</p>
+        `;
+        phrase.innerHTML = `
           <p><strong>Frase:</strong> “¿Dónde estoy?”</p>
         `;
       } else if (fileName === 'canita_grande.png') {
@@ -101,6 +119,8 @@
           <p><strong>Fuerza:</strong> 10/10</p>
           <p><strong>Potencia vocal:</strong> 11/10</p>
           <p><strong>Probabilidad de palmarla:</strong> Inmortal</p>
+        `;
+        phrase.innerHTML = `
           <p><strong>Frase:</strong> “¡Cañita pa' rato!”</p>
         `;
       }
