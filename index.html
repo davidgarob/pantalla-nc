@@ -109,11 +109,11 @@ e <!DOCTYPE html>
     <img src="personajes/yoko_thumb.png" alt="Yoko Ono" onclick="changeImage('yoko_grande.png', 'audio/yoko.mp3')">
     <img src="personajes/duvall_thumb.png" alt="Cañita Brava" onclick="changeImage('duvall_grande.png', 'audio/duvall.mp3')">
     <div style="flex-basis: 100%; height: 0;"></div>
-    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png', 'audio/canita.mp3')">
-    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png', 'audio/canita.mp3')">
-    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png', 'audio/canita.mp3')">
-    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png', 'audio/canita.mp3')">
-    <img src="personajes/canita_thumb.png" alt="Cañita Brava" onclick="changeImage('canita_grande.png', 'audio/canita.mp3')">
+    <img src="personajes/dyke_thumb.png" alt="Dick Van Dyke" onclick="changeImage('dyke_grande.png', 'audio/dyke.mp3')">
+    <img src="personajes/tessier_thumb.png" alt="Marie Rose Tessier" onclick="changeImage('tessier_grande.png', 'audio/tessier.mp3')">
+    <img src="personajes/eastwood_thumb.png" alt="Clint Eastwood" onclick="changeImage('eastwood_grande.png', 'audio/eastwood.mp3')">
+    <img src="personajes/aldrin_thumb.png" alt="Buzz Aldrin" onclick="changeImage('aldrin_grande.png', 'audio/aldrin.mp3')">
+    <img src="personajes/simon_thumb.png" alt="Simón Pérez" onclick="changeImage('simon_grande.png', 'audio/simon.mp3')">
     <!-- Agrega más miniaturas aquí -->
   </div>
 
@@ -144,6 +144,15 @@ e <!DOCTYPE html>
         phrase.innerHTML = `
           <p><strong>Frase:</strong> “¡Cañita pa' rato!”</p>
         `;
+      } else if (fileName === 'soros_grande.png') {
+        stats.innerHTML = `
+          <p><strong>Dinero:</strong> 10/10</p>
+          <p><strong>Ancianidad:</strong> 11/10</p>
+          <p><strong>Probabilidad de palmarla:</strong> Si</p>
+        `;
+        phrase.innerHTML = `
+          <p><strong>Frase:</strong> “¡Cañita pa' rato!”</p>
+        `;
       }
 
       // Reproducir sonido
@@ -155,6 +164,7 @@ e <!DOCTYPE html>
   </script>
 </body>
 </html>
+
 
 
 
