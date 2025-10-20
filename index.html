@@ -81,6 +81,25 @@ e <!DOCTYPE html>
       font-weight: bold;
       box-shadow: 0 0 10px yellow;
     }
+    /* Diseño responsivo */
+    @media (max-width: 768px) {
+    .display-container {
+    flex-direction: column;
+    align-items: center;
+    }
+    .big-display {
+    height: auto;
+    max-width: 90vw;
+    }
+    #stats, #phrase {
+    max-width: 90vw;
+    font-size: 16px;
+    }
+    #fight-button {
+    font-size: 20px;
+    padding: 12px 30px;
+    }
+  }
   </style>
 </head>
 <body>
@@ -233,6 +252,7 @@ e <!DOCTYPE html>
   </script>
 </body>
 </html>
+
 
 
 
